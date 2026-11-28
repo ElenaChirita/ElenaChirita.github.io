@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Goldcomb Analytics | Elena Chiriță</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a class="brand" href="index.html">EC / Data Analytics</a>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="index.html#connect">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <a class="btn secondary" href="projects.html">
+        ← Back to projects
+    </a>
+
+    <section class="case">
+
+        <div class="eyebrow">
+            E-commerce analytics · Case study 02
+        </div>
+
+        <h1>Goldcomb Analytics</h1>
+
+        <p class="lead">
+            Customer behaviour, data quality & revenue reconciliation
+        </p>
+
+        <p>
+            A SQL-based investigation into customer activity,
+            data inconsistencies, refund anomalies and discrepancies
+            between Sales and Finance revenue reporting.
+        </p>
+
+        <div class="tags">
+            <span class="tag">SQL Server</span>
+            <span class="tag">CTEs</span>
+            <span class="tag">Joins</span>
+            <span class="tag">Data Quality</span>
+            <span class="tag">Business Analysis</span>
+            <span class="tag">Revenue Reconciliation</span>
+        </div>
+
+        <a class="btn"
+           href="https://github.com/ElenaChirita/GoldcombAnalytics"
+           target="_blank"
+           rel="noopener noreferrer">
+            View SQL project on GitHub ↗
+        </a>
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>49,181</strong>
+                <span>Non-test customers</span>
+            </div>
+
+            <div class="stat">
+                <strong>17%</strong>
+                <span>Active customer rate</span>
+            </div>
+
+            <div class="stat">
+                <strong>55</strong>
+                <span>Suspected duplicate refund pairs</span>
+            </div>
+
+            <div class="stat">
+                <strong>$258,721</strong>
+                <span>September Finance net revenue</span>
+            </div>
+
+        </div>
+
+        <h2>Key findings</h2>
+
+        <!-- INSIGHT 1 -->
+
+        <section class="insight">
+
+            <div class="eyebrow">
+                Insight 01 · Data quality
+            </div>
+
+            <h3>Duplicate customer accounts</h3>
+
+            <p>
+                A case-insensitive email comparison revealed
+                two customer accounts sharing the same email address.
+                One account had six completed orders, while the
+                other had no purchase history.
+            </p>
+
+            <p>
+                This suggests a potential duplicate registration
+                that could distort customer counts and customer-level
+                performance metrics.
+            </p>
+
+            <figure>
+                <button class="zoom" aria-label="Enlarge duplicate email analysis">
+                    <img src="assets/emailduplicate.png"
+                         alt="SQL analysis identifying duplicate customer emails"
+                         loading="lazy">
+                </button>
+
+                <figcaption>
+                    Customer email validation · Click to enlarge
+                </figcaption>
+            </figure>
+
+        </section>
+
+        <!-- INSIGHT 2 -->
+
+        <section class="insight">
+
+            <div class="eyebrow">
+                Insight 02 · Data completeness
+            </div>
+
+            <h3>Missing customer regions</h3>
+
+            <p>
+                Data quality checks identified 37 customer records
+                with missing region information.
+            </p>
+
+            <p>
+                Incomplete geographical data may affect regional
+                segmentation, reporting accuracy and targeted
+                marketing decisions.
+            </p>
+
+            <figure>
+                <button class="zoom" aria-label="Enlarge missing region analysis">
+                    <img src="assets/regionnull2.png"
+                         alt="SQL query identifying missing customer regions"
+                         loading="lazy">
+                </button>
+
+                <figcaption>
+                    Missing customer regions · Click to enlarge
+                </figcaption>
+            </figure>
+
+        </section>
+
+        <!-- INSIGHT 3 -->
+
+        <section class="insight">
+
+            <div class="eyebrow">
+                Insight 03 · Refund anomalies
+            </div>
+
+            <h3>Potential duplicate refunds</h3>
+
+            <p>
+                55 suspected duplicate refund pairs were identified
+                across the legacy and new systems, sharing the same
+                order IDs and refund amounts.
+            </p>
+
+            <p>
+                The pattern suggests a potential duplication issue
+                associated with system migration, which could
+                overstate reported refunds and understate net revenue.
+            </p>
+
+            <p>
+                Transaction-level validation is required before
+                confirming duplicate payments.
+            </p>
+
+            <figure>
+                <button class="zoom" aria-label="Enlarge duplicate refund analysis">
+                    <img src="assets/refundsduplicate3.png"
+                         alt="SQL investigation of potential duplicate refunds"
+                         loading="lazy">
+                </button>
+
+                <figcaption>
+                    Legacy vs. new system refunds · Click to enlarge
+                </figcaption>
+            </figure>
+
+        </section>
+
+        <!-- INSIGHT 4 -->
+
+        <section class="insight">
+
+            <div class="eyebrow">
+                Insight 04 · Customer behaviour
+            </div>
+
+            <h3>Customer activity and inactivity</h3>
+
+            <p>
+                Using a 90-day activity window and completed orders,
+                8,362 of 49,181 non-test customers were classified
+                as active, representing approximately 17%
+                of the customer base.
+            </p>
+
+            <p>
+                The remaining 40,819 customers were classified as
+                inactive, highlighting an opportunity for targeted
+                customer reactivation campaigns.
+            </p>
+
+            <figure>
+                <button class="zoom" aria-label="Enlarge customer activity analysis">
+                    <img src="assets/customers4.png"
+                         alt="SQL customer activity segmentation"
+                         loading="lazy">
+                </button>
+
+                <figcaption>
+                    Active vs. inactive customers · Click to enlarge
+                </figcaption>
+            </figure>
+
+        </section>
+
+        <!-- INSIGHT 5 -->
+
+        <section class="insight">
+
+            <div class="eyebrow">
+                Insight 05 · September 2026
+            </div>
+
+            <h3>Finding the culprit behind the refund spike</h3>
+
+            <p>
+                The Drip-Free Glass Honey Dispenser was associated
+                with 77 refunded orders, representing $3,196
+                in refund amounts.
+            </p>
+
+            <p>
+                Of these, 59 were associated with a leaking lid,
+                accounting for $2,448 — approximately 77%
+                of the associated refund value.
+            </p>
+
+            <p>
+                This recurring complaint suggests a potential
+                product quality issue that warrants investigation
+                with the supplier.
+            </p>
+
+            <figure>
+                <button class="zoom" aria-label="Enlarge refund spike investigation">
+                    <img src="assets/theculpritforrefunds5.png"
+                         alt="SQL investigation identifying leaking lids as a refund reason"
+                         loading="lazy">
+                </button>
+
+                <figcaption>
+                    Product-level refund investigation · Click to enlarge
+                </figcaption>
+            </figure>
+
+        </section>
+
+        <!-- INSIGHT 6 -->
+
+        <section class="insight">
+
+            <div class="eyebrow">
+                Insight 06 · Financial reporting
+            </div>
+
+            <h3>Finance vs. Sales revenue reconciliation</h3>
+
+            <p>
+                September 2026 revenue reporting revealed a discrepancy
+                between Sales revenue of $299,482 and Finance net
+                revenue of $258,721.
+            </p>
+
+            <p>
+                The investigation examined reporting boundaries,
+                order statuses and refund adjustments to understand
+                the $40,761 difference.
+            </p>
+
+            <p>
+                The findings highlight the importance of consistent
+                revenue definitions, reporting cutoffs and refund
+                validation across business departments.
+            </p>
+
+            <figure>
+                <button class="zoom" aria-label="Enlarge revenue reconciliation">
+                    <img src="assets/financeandsales6.png"
+                         alt="SQL revenue reconciliation between Finance and Sales"
+                         loading="lazy">
+                </button>
+
+                <figcaption>
+                    Finance vs. Sales revenue · Click to enlarge
+                </figcaption>
+            </figure>
+
+        </section>
+
+        <!-- RECOMMENDATIONS -->
+
+        <section class="insight">
+
+            <div class="eyebrow">From analysis to action</div>
+
+            <h2>Business recommendations</h2>
+
+            <ul>
+                <li>Implement customer deduplication and email validation.</li>
+                <li>Improve customer data completeness.</li>
+                <li>Validate refund transactions across source systems.</li>
+                <li>Develop targeted customer reactivation campaigns.</li>
+                <li>Investigate recurring product quality complaints.</li>
+                <li>Standardise revenue definitions across departments.</li>
+            </ul>
+
+        </section>
+
+        <section class="insight">
+
+            <h3>Analytical limitations</h3>
+
+            <p>
+                Potential duplicate refunds require transaction-level
+                confirmation. Product-associated refunds may not
+                represent refunds exclusively attributable to that
+                product in multi-item orders. The detailed revenue
+                reconciliation requires further validation.
+            </p>
+
+        </section>
+
+        <a class="btn secondary" href="projects.html">
+            ← Back to projects
+        </a>
+
+        <a class="btn"
+           href="https://github.com/ElenaChirita/GoldcombAnalytics"
+           target="_blank"
+           rel="noopener noreferrer">
+            View SQL scripts on GitHub ↗
+        </a>
+
+    </section>
+
+</main>
+
+<footer>
+    Elena Chiriță · Data Analytics Portfolio
+</footer>
+
+<dialog id="viewer">
+    <button aria-label="Close image" type="button">
+        Close ×
+    </button>
+    <img alt="Enlarged SQL analysis screenshot">
+</dialog>
+
+<script>
+    const viewer = document.querySelector('#viewer');
+
+    document.querySelectorAll('.zoom').forEach(button => {
+        button.onclick = () => {
+            const image = button.querySelector('img');
+            viewer.querySelector('img').src = image.src;
+            viewer.querySelector('img').alt = image.alt;
+            viewer.showModal();
+        };
+    });
+
+    viewer.querySelector('button').onclick = () => {
+        viewer.close();
+    };
+
+    viewer.onclick = event => {
+        if (event.target === viewer) {
+            viewer.close();
+        }
+    };
+</script>
+
+</body>
+</html>
