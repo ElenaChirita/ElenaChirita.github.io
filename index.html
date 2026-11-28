@@ -1,462 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Elena Chiriță | Data Analyst Portfolio</title>
-
-<style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-
-body{
-    margin:0;
-    font:17px/1.65 system-ui,sans-serif;
-    color:#17283b;
-    background:#f8fafc;
-}
-
-a{color:inherit}
-
-header{
-    position:sticky;
-    top:0;
-    background:#f8fafcf5;
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid #dce5ef;
-    z-index:2;
-}
-
-nav,main,footer{
-    max-width:1160px;
-    margin:auto;
-    padding:18px 30px;
-}
-
-nav{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-}
-
-nav a{
-    text-decoration:none;
-    font-weight:650;
-}
-
-nav div{display:flex;gap:22px}
-.brand{letter-spacing:-.04em}
-
-.hero{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:45px;
-    align-items:center;
-    padding:65px 0 75px;
-}
-
-h1,h2,h3,p{margin:0 0 18px}
-
-h1{
-    font-size:clamp(45px,5.5vw,76px);
-    line-height:1.04;
-    letter-spacing:-.065em;
-}
-
-h2{
-    font-size:clamp(30px,4vw,48px);
-    line-height:1.12;
-    letter-spacing:-.045em;
-}
-
-h3{
-    font-size:28px;
-    line-height:1.2;
-    letter-spacing:-.025em;
-}
-
-.eyebrow{
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:.16em;
-    font-weight:800;
-    color:#1265a8;
-    margin-bottom:15px;
-}
-
-.identity{
-    font-size:19px;
-    font-weight:650;
-    color:#526479;
-    margin-bottom:20px;
-}
-
-.lead{
-    font-size:22px;
-    color:#526479;
-    max-width:730px;
-}
-
-.btn{
-    display:inline-block;
-    padding:12px 22px;
-    border-radius:8px;
-    background:#123b65;
-    color:white;
-    text-decoration:none;
-    font-weight:650;
-    margin:10px 8px 0 0;
-    transition:background .2s,transform .2s;
-}
-
-.btn:hover{
-    transform:translateY(-2px);
-    background:#1265a8;
-    color:white;
-}
-
-.secondary{
-    background:white;
-    color:#123b65;
-    border:1px solid #c5d4e2;
-}
-
-.tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin:22px 0;
-}
-
-.tag{
-    padding:5px 12px;
-    border:1px solid #d2deea;
-    background:white;
-    border-radius:30px;
-    font-size:13px;
-    font-weight:650;
-}
-
-.hero-visual{
-    border-radius:24px;
-    overflow:hidden;
-    box-shadow:0 20px 40px #17283b22;
-}
-
-.hero-visual img{
-    width:100%;
-    height:auto;
-    display:block;
-}
-
-.card{
-    background:white;
-    border:1px solid #dce5ef;
-    border-radius:18px;
-    overflow:hidden;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
-    margin:24px 0 40px;
-}
-
-.card div{padding:32px}
-.card img{width:100%;display:block}
-
-.toy-art{
-    min-height:280px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    background:radial-gradient(
-        ellipse at 50% 75%,
-        #fff5df,#f0d8b6
-    );
-    overflow:hidden;
-    padding:35px;
-    text-decoration:none;
-}
-
-.toy-art span{
-    font-size:clamp(48px,7.5vw,100px);
-    line-height:1;
-    filter:drop-shadow(0 13px 7px #77582c35);
-}
-
-.toy-art span:nth-child(2){
-    transform:translateY(-20px);
-}
-
-.toy-art span:nth-child(3){
-    transform:rotate(8deg) translateY(12px);
-}
-
-.sql-art{
-    min-height:280px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(145deg,#102338,#184b70);
-    color:white;
-    text-decoration:none;
-    padding:30px;
-}
-
-.sql-art strong{
-    font-size:75px;
-    letter-spacing:-.05em;
-    color:#76d9ff;
-}
-
-.sql-art code{
-    font-size:15px;
-    color:#b5e8ff;
-    line-height:1.9;
-}
-
-#projects,#connect{
-    scroll-margin-top:90px;
-}
-
-#connect{
-    background:#132f4c;
-    color:white;
-    padding:35px;
-    border-radius:16px;
-    margin:45px 0;
-}
-
-#connect p{color:#d5e3f0}
-
-footer{
-    border-top:1px solid #dce5ef;
-    color:#526479;
-    padding-top:35px;
-    padding-bottom:45px;
-}
-
-@media(max-width:760px){
-
-    nav,main,footer{
-        padding-left:18px;
-        padding-right:18px;
-    }
-
-    nav{font-size:13px}
-    nav div{gap:12px}
-
-    .hero{
-        grid-template-columns:1fr;
-        padding:45px 0;
-        gap:24px;
-    }
-
-    .card{grid-template-columns:1fr}
-    .card div{padding:22px}
-
-    .toy-art,.sql-art{
-        min-height:190px;
-    }
-}
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elena Chiriță | Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-<nav>
-    <a class="brand" href="#">EC / Data Analytics</a>
-    <div>
-        <a href="#projects">Projects</a>
-        <a href="#connect">Contact</a>
-    </div>
-</nav>
+    <nav>
+        <a class="brand" href="index.html">EC / Data Analytics</a>
+        <div>
+            <a href="projects.html">Projects</a>
+            <a href="#connect">Contact</a>
+        </div>
+    </nav>
 </header>
 
 <main>
 
-<section class="hero">
+    <section class="hero">
 
-    <div class="hero-copy">
-
-        <div class="eyebrow">Data analytics portfolio</div>
-
-        <p class="identity">
-            Elena Chiriță | Data Analyst
-        </p>
-
-        <h1>
-            Data has secrets.<br/>
-            <span style="color:#1265a8">I know SQL.</span>
-        </h1>
-
-        <p class="lead">
-            Curious by nature. Analytical by choice.
-            Exploring data, uncovering patterns and
-            asking the questions that matter.
-        </p>
-
-        <div class="tags">
-            <span class="tag">Microsoft Certified: Power BI Data Analyst Associate</span>
-            <span class="tag">SQL Server</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">Excel</span>
-            <span class="tag">Python</span>
-        </div>
-
-        <a class="btn" href="#projects">
-            View my projects →
-        </a>
-
-        <a class="btn secondary" href="#connect">
-            Let's connect
-        </a>
-
-    </div>
-
-    <div class="hero-visual">
-        <img
-            src="assets/data-hero.jpg.jpeg"
-            alt="Raw documents transforming into digital data and analytics"
-        />
-    </div>
-
-</section>
-
-<section id="projects">
-
-    <div class="eyebrow">Selected work</div>
-    <h2>My projects</h2>
-
-    <article class="card">
-
-        <a class="toy-art"
-           href="maven-toys.html"
-           aria-label="Open Maven Toys case study">
-
-            <span>🚂</span>
-            <span>🧸</span>
-            <span>🧩</span>
-
-        </a>
-
-        <div>
+        <div class="hero-copy">
 
             <div class="eyebrow">
-                Retail analytics · Case study 01
+                Data analytics portfolio
             </div>
 
-            <h3>Maven Toys – Sales &amp; Inventory Analysis</h3>
+            <p class="identity">
+                Elena Chiriță | Data Analyst
+            </p>
 
-            <p>
-                End-to-end data analytics project exploring
-                sales, profitability, store performance
-                and inventory risk.
+            <h1>
+                Data has secrets.<br>
+                <span class="accent">I know SQL.</span>
+            </h1>
+
+            <p class="lead">
+                Curious by nature. Analytical by choice.
+                Exploring data, uncovering patterns and
+                asking the questions that matter.
             </p>
 
             <div class="tags">
+
+                <span class="tag">
+                    Microsoft Certified: Power BI Data Analyst Associate
+                </span>
+
+                <span class="tag">SQL Server</span>
                 <span class="tag">Power BI</span>
-                <span class="tag">SQL Server</span>
-                <span class="tag">DAX</span>
+                <span class="tag">Excel</span>
+                <span class="tag">Python</span>
+
             </div>
 
-            <a class="btn" href="maven-toys.html">
-                Explore case study →
+            <a class="btn" href="projects.html">
+                View my projects →
             </a>
 
-            <a class="btn secondary"
-               href="https://github.com/ElenaChirita/MavenToys-Analytics"
-               target="_blank"
-               rel="noopener noreferrer">
-                View on GitHub ↗
+            <a class="btn secondary" href="#connect">
+                Let's connect
             </a>
 
         </div>
 
-    </article>
+        <div class="hero-visual">
 
-    <article class="card">
+            <img src="assets/data-hero.jpg.jpeg"
+                 alt="Raw documents transforming into digital data">
 
-        <a class="sql-art"
-           href="goldcomb-analytics.html"
-           aria-label="Open Goldcomb Analytics case study">
+        </div>
 
-            <strong>SQL</strong>
+    </section>
 
-            <code>
-                SELECT insights<br/>
-                FROM data<br/>
-                WHERE curiosity = 1;
-            </code>
+    <section id="connect">
 
+        <div class="eyebrow">Get in touch</div>
+
+        <h2>Let's connect</h2>
+
+        <p>
+            Explore my work and connect with me professionally.
+        </p>
+
+        <a class="btn secondary"
+           href="https://www.linkedin.com/in/elena-chirita-4a3ba3369/"
+           target="_blank"
+           rel="noopener noreferrer">
+            LinkedIn ↗
         </a>
 
-        <div>
+        <a class="btn secondary"
+           href="mailto:chiritaelena314@gmail.com">
+            Email me
+        </a>
 
-            <div class="eyebrow">
-                E-commerce analytics · Case study 02
-            </div>
+        <a class="btn secondary"
+           href="https://github.com/ElenaChirita"
+           target="_blank"
+           rel="noopener noreferrer">
+            GitHub ↗
+        </a>
 
-            <h3>Goldcomb – Customer &amp; Revenue Analytics</h3>
-
-            <p>
-                Investigating customer activity, data quality
-                issues, duplicate refunds, product-related
-                refund patterns and financial revenue discrepancies.
-            </p>
-
-            <div class="tags">
-                <span class="tag">SQL Server</span>
-                <span class="tag">Data Quality</span>
-                <span class="tag">Revenue Reconciliation</span>
-            </div>
-
-            <a class="btn" href="goldcomb-analytics.html">
-                Explore case study →
-            </a>
-
-            <a class="btn secondary"
-               href="https://github.com/ElenaChirita/GoldcombAnalytics"
-               target="_blank"
-               rel="noopener noreferrer">
-                View on GitHub ↗
-            </a>
-
-        </div>
-
-    </article>
-
-</section>
-
-<section id="connect">
-
-    <h2>Let's connect</h2>
-
-    <p>Explore my work and connect with me professionally.</p>
-
-    <a class="btn secondary"
-       href="https://www.linkedin.com/in/elena-chirita-4a3ba3369/"
-       target="_blank"
-       rel="noopener noreferrer">
-        LinkedIn ↗
-    </a>
-
-    <a class="btn secondary"
-       href="mailto:chiritaelena314@gmail.com">
-        Email me
-    </a>
-
-    <a class="btn secondary"
-       href="https://github.com/ElenaChirita"
-       target="_blank"
-       rel="noopener noreferrer">
-        GitHub ↗
-    </a>
-
-</section>
+    </section>
 
 </main>
 
